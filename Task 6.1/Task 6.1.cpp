@@ -5,55 +5,74 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-void create_students(struct student*, const int);
-void print(struct student*, const int);
+void fill_group(struct student*, const int);
+void output_group(struct student*, const int);
 float determ_average_age(struct student*, const int, int);
 
 struct student{
 public:
+	//использую стринги просто потому что они ни на что не влияют
 	string surname;
-	string first_name;
+	string name;
 	string patronymic;
 	string gender;
 	int course;
 	int age;
 	float average_score;
-
 };
 
 int main()
 {
 	setlocale(LC_ALL, "");
-	const int SIZE = 3;
-	student group[SIZE];
 
-	create_students(group, SIZE);
+	const int AMOUNT_STUD = 3;
+	student group[AMOUNT_STUD];
 
+	fill_group(group, AMOUNT_STUD);
+
+	cout << "choice cource: " << endl;
 	int coursce; cin >> coursce;
 
-	cout << determ_average_age(group, SIZE, coursce);
+	cout << determ_average_age(group, AMOUNT_STUD, coursce);
 }
 
-void create_students(struct student* group, const int SIZE)
+//Функция ввода массива
+void fill_group(struct student* group, const int AMOUNT_STUD)
 {
-	for (int i = 0; i < SIZE; ++i)
+	for (int i = 0; i < AMOUNT_STUD; ++i)
 	{
+		cout << "create student: " << endl;
+
+		cout << "surname: " << endl;
 		cin >> group[i].surname;
-		cin >> group[i].first_name;
+
+		cout << "name: " << endl;
+		cin >> group[i].name;
+
+		cout << "patronymic: " << endl;
 		cin >> group[i].patronymic;
+
+		cout << "gender: " << endl;
 		cin >> group[i].gender;
+
+		cout << "course: " << endl;
 		cin >> group[i].course;
+
+		cout << "age: " << endl;
 		cin >> group[i].age;
+
+		cout << "average_score: " << endl;
 		cin >> group[i].average_score;
 	}
 }
 
-void print(struct student* group, const int SIZE)
+//Функция вывод массива 
+void output_group(struct student* group, const int AMOUNT_STUD)
 {
-	for (int i = 0; i < SIZE; ++i)
+	for (int i = 0; i < AMOUNT_STUD; ++i)
 	{
 		cout << group[i].surname << ' ';
-		cout << group[i].first_name << ' ';
+		cout << group[i].name << ' ';
 		cout << group[i].patronymic << ' ';
 		cout << group[i].gender << ' ';
 		cout << group[i].course << ' ';
@@ -63,12 +82,13 @@ void print(struct student* group, const int SIZE)
 	}
 }
 
-float determ_average_age(struct student* group, const int SIZE, int course)
+//Функция определяет средний возраст студентов n-ого курса 
+float determ_average_age(struct student* group, const int AMOUNT_STUD, int course)
 {
 	float aver_age = 0;
 	int amount_stud = 0;
 
-	for (int i = 0; i < SIZE; ++i)
+	for (int i = 0; i < AMOUNT_STUD; ++i)
 	{
 		if (group[i].course == course)
 		{
@@ -91,6 +111,7 @@ float determ_average_age(struct student* group, const int SIZE, int course)
 1 
 20 
 7.0
+
 Артем 
 Павлович 
 Дмитревич 
@@ -98,6 +119,7 @@ float determ_average_age(struct student* group, const int SIZE, int course)
 2 
 19 
 5.0
+
 Александр 
 Карней 
 Александрович 
