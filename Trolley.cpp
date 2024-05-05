@@ -5,10 +5,10 @@ Trolley::Trolley(): Transport() {}
 Trolley::Trolley(Point start, Point end, size_t time, double price): Transport(start, end, time, price) {}
 
 void Trolley::print() const {
-        std::cout << "Trolley" << std::endl
-                << "get_start set_start" << std::endl
-                << "get_end set_end" << std::endl
-                << "get_time set_time" << std::endl 
-                << "get_price set_price" << std::endl;
+	std::cout << "Trolley" << std::endl;
+        std::cout << "Start position: " << _start._x << ' ' << _start._y << std::endl;
+        std::cout << "End position: " << _end._x << ' ' << _end._y << std::endl;                                                                                                        
+	std::cout << "Price: " << _price << " rub" << std::endl;
+	std::cout << "Route time: " << _time << " minutes" << std::endl;
 }
 

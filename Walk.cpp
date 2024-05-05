@@ -5,8 +5,8 @@ Walk::Walk(): Move() {}
 Walk::Walk(Point start, Point end, size_t time): Move(start, end, time) {}
 
 void Walk::print() const {
-	std::cout << "Walk" << std::endl
-		<< "get_start set_start" << std::endl
-		<< "get_end set_end" << std::endl
-		<< "get_time set_time" << std::endl;
+	std::cout << "Walk" << std::endl;
+	std::cout << "Start position: " << _start._x << ' ' << _start._y << std::endl;
+	std::cout << "End position: " << _end._x << ' ' << _end._y << std::endl;
+	std::cout << "Route time: " << _time << " minutes" << std::endl;
 }
