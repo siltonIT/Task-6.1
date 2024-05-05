@@ -9,4 +9,6 @@ struct Point {
 	Point();
 
 	Point(double, double);
+
+	Point(const Point&) = default;
 };
