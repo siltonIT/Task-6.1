@@ -4,7 +4,8 @@
 #include "Transport.h"
                   
 class Taxi: public Transport {
-        Taxi();
+public:
+	Taxi();
 
         Taxi(Point, Point, size_t, double);
 

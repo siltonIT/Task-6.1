@@ -4,6 +4,7 @@
 #include "Transport.h"
 
 class Bus : public Transport {
+public:
 	Bus();
 
 	Bus(Point, Point, size_t, double);
